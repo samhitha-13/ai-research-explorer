@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Research Paper Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">OpenAlex + Gemini AI</div>
+      <h1>AI Research Paper Explorer</h1>
+      <p>Discover open-access papers, save your reading list, and generate plain-English AI breakdowns.</p>
+      
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search topic (e.g., biosensors, neural networks)..." />
+        <button id="searchBtn">Search</button>
+        <input type="password" id="apiKeyInput" placeholder="Optional: Gemini API Key" />
+      </div>
+
+      <div class="filter-bar">
+        <button id="tabAll" class="tab active">Search Results</button>
+        <button id="tabSaved" class="tab">Saved Reading List (<span id="savedCount">0</span>)</button>
+        <button id="compareBtn" class="compare-trigger hidden">Compare Selected (<span id="compareCount">0</span>)</button>
+      </div>
+    </header>
+
+    <div id="status" class="status"></div>
+    <main id="resultsGrid" class="grid"></main>
+  </div>
+
+  <!-- AI Breakdown & Comparison Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn">&times;</button>
+      <h2 id="modalTitle">Analysis</h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
